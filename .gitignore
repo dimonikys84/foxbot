@@ -6,7 +6,7 @@ settings.ini
 settings.py
 
 ### Pycharm shit ###
-.idea/ 
+.idea/
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
