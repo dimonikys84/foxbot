@@ -38,7 +38,7 @@ def stat(bot, update):
     bot.sendMessage(chat_id=update.message.chat_id, text=text_caps)
 
 def pokeAll(bot, update):
-    print(getNow(),'requested command /pokeAll')
+    print(getNow(),'requested command /pokeall')
     pokeText = update.message.text.replace('/pokeAll','')
     print('update text: ',update);
     with ts3.query.TS3Connection(ts3adress) as ts3conn:
