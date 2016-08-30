@@ -5,15 +5,12 @@ from tools import ChannelTreeNode
 from time import gmtime, strftime
 import time
 import logging
-from configparser import SafeConfigParser
+import anims, settings_sample
 
-parser = SafeConfigParser()
-parser.read('settings.ini')
-
-token = parser.get('main','token')
-ts3adress = parser.get('main','ts3adress')
-ts3username = parser.get('main','ts3username')
-ts3password = parser.get('main','ts3password')
+token = settings_sample.token
+ts3adress = settings_sample.ts3adress
+ts3username = settings_sample.ts3username
+ts3password = settings_sample.ts3password
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -71,16 +68,9 @@ def getList(bot, update):
 
 def fun(bot,update):
     print(getNow(),'requested command /fun')
-    anim = [
-        "                   ( ͡° ͜ʖ ͡°)                 ",
-        "            ( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°)            ",
-        "        ( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)        ",
-        "    ( ͡°( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°) ͡°)    ",
-        "( ͡°( ͡°( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°) ͡°) ͡°)"
-    ]
     msg = ''
     first = False
-    for an in anim:
+    for an in anims.funAnim:
         if first == False:
             msg = bot.sendMessage(chat_id=update.message.chat_id, text=an)
             first = True
