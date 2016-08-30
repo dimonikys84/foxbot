@@ -7,6 +7,7 @@ token = settings.token
 ts3adress = settings.ts3adress
 ts3username = settings.ts3username
 ts3password = settings.ts3password
+mainChatId = settings.mainChatId
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -44,7 +45,7 @@ def enterwatcherbot(ts3conn, msg=None):
             if (str(event.event) == "notifycliententerview") and '9' in event.parsed[0]['client_servergroups'].split(','):
                 # -32821639
                 lstTxt = '\n<b>' + event.parsed[0]['client_nickname'] + '</b> зашел на сервер ts'
-                mes = bot.sendMessage(chat_id=-1001051221798, text=lstTxt, parse_mode=telegram.ParseMode.HTML)
+                mes = bot.sendMessage(chat_id=mainChatId, text=lstTxt, parse_mode=telegram.ParseMode.HTML)
     return None
 
 with ts3.query.TS3Connection(ts3adress) as ts3conn:

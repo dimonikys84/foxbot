@@ -11,6 +11,7 @@ token = settings.token
 ts3adress = settings.ts3adress
 ts3username = settings.ts3username
 ts3password = settings.ts3password
+announceMembers = settings.announceMembers
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -80,7 +81,7 @@ def fun(bot,update):
 
 def announce(bot,update):
     print(getNow(),'requested command /announce')
-    AnnText = '@Semerk @AkumaDanny @SogiDeSai @dimonikys @serjeyn @CheesyDragon @YuCivori @Shouner @NormanGrayland @ravinggus @CookieVRuki @exodist @kenalix @El_Ray\n'
+    AnnText = '{}\n'.format(announceMembers)
     AnnText += update.message.text.replace('/announce', '')
     bot.sendMessage(chat_id=update.message.chat_id, text=AnnText)
 
