@@ -5,12 +5,12 @@ from tools import ChannelTreeNode
 from time import gmtime, strftime
 import time
 import logging
-import anims, settings_sample
+import anims, settings
 
-token = settings_sample.token
-ts3adress = settings_sample.ts3adress
-ts3username = settings_sample.ts3username
-ts3password = settings_sample.ts3password
+token = settings.token
+ts3adress = settings.ts3adress
+ts3username = settings.ts3username
+ts3password = settings.ts3password
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
