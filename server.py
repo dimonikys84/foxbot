@@ -87,7 +87,7 @@ def announce(bot,update):
 dispatcher.addHandler(CommandHandler('stat', stat))
 dispatcher.addHandler(CommandHandler('getlist', getList))
 dispatcher.addHandler(CommandHandler('fun', fun))
-dispatcher.addHandler(CommandHandler('pokeAll', pokeAll))
+dispatcher.addHandler(CommandHandler('pokeall', pokeAll))
 dispatcher.addHandler(CommandHandler('announce', announce))
 updater.start_polling()
 
