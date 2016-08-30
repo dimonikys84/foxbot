@@ -78,12 +78,17 @@ def fun(bot,update):
             bot.editMessageText(chat_id=msg.chat.id,message_id=msg.message_id, text=an)
         time.sleep(1)
 
+def announce(bot,update):
+    print(getNow(),'requested command /announce')
+    AnnText = '@Semerk @AkumaDanny @SogiDeSai @dimonikys @serjeyn @CheesyDragon @YuCivori @Shouner @NormanGrayland @ravinggus @CookieVRuki @exodist @kenalix @El_Ray\n'
+    AnnText += update.message.text.replace('/announce', '')
+    bot.sendMessage(chat_id=update.message.chat_id, text=AnnText)
 
 dispatcher.addHandler(CommandHandler('stat', stat))
 dispatcher.addHandler(CommandHandler('getlist', getList))
 dispatcher.addHandler(CommandHandler('fun', fun))
 dispatcher.addHandler(CommandHandler('pokeAll', pokeAll))
-
+dispatcher.addHandler(CommandHandler('announce', announce))
 updater.start_polling()
 
 updater.idle()
