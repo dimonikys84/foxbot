@@ -1,10 +1,12 @@
 import telegram
 import ts3
 import logging
-from configparser import SafeConfigParser
+import settings
 
-parser = SafeConfigParser()
-parser.read('settings.ini')
+token = settings.token
+ts3adress = settings.ts3adress
+ts3username = settings.ts3username
+ts3password = settings.ts3password
 
 token = parser.get('main','token')
 ts3adress = parser.get('main','ts3adress')
