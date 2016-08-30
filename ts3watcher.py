@@ -8,11 +8,6 @@ ts3adress = settings.ts3adress
 ts3username = settings.ts3username
 ts3password = settings.ts3password
 
-token = parser.get('main','token')
-ts3adress = parser.get('main','ts3adress')
-ts3username = parser.get('main','ts3username')
-ts3password = parser.get('main','ts3password')
-
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
