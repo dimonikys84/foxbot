@@ -8,6 +8,6 @@
 stat - Получить статус бота
 getlist - Посмотреть сервер ts
 fun - Кек
-pokeAl - Покнуть всем в ts
-announce - Аннонс
+pokeall - Покнуть всем в ts
+announce - Анонс
 ```
