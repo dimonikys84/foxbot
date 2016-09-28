@@ -87,7 +87,7 @@ def announce(bot,update):
 
 def guardians(bot,update):
     print(getNow(),'requested command /guardians')
-    AnnText = '{}\n'.format(announceMembers)
+    AnnText = '{}\n'.format(guardians)
     AnnText += update.message.text.replace('/guardians', '')
     bot.sendMessage(chat_id=update.message.chat_id, text=AnnText)
 

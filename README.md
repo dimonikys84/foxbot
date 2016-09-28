@@ -10,4 +10,5 @@ getlist - Посмотреть сервер ts
 fun - Кек
 pokeall - Покнуть всем в ts
 announce - Анонс
+guardians - Анонс гардианам
 ```
