@@ -85,11 +85,18 @@ def announce(bot,update):
     AnnText += update.message.text.replace('/announce', '')
     bot.sendMessage(chat_id=update.message.chat_id, text=AnnText)
 
+def guardians(bot,update):
+    print(getNow(),'requested command /guardians')
+    AnnText = '{}\n'.format(announceMembers)
+    AnnText += update.message.text.replace('/guardians', '')
+    bot.sendMessage(chat_id=update.message.chat_id, text=AnnText)
+
 dispatcher.addHandler(CommandHandler('stat', stat))
 dispatcher.addHandler(CommandHandler('getlist', getList))
 dispatcher.addHandler(CommandHandler('fun', fun))
 dispatcher.addHandler(CommandHandler('pokeall', pokeAll))
 dispatcher.addHandler(CommandHandler('announce', announce))
+dispatcher.addHandler(CommandHandler('guardians', guardians))
 updater.start_polling()
 
 updater.idle()
