@@ -12,6 +12,7 @@ ts3adress = settings.ts3adress
 ts3username = settings.ts3username
 ts3password = settings.ts3password
 announceMembers = settings.announceMembers
+guardiansList = settings.guardiansList
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -41,7 +42,7 @@ def stat(bot, update):
 def pokeAll(bot, update):
     print(getNow(),'requested command /pokeall')
     pokeText = update.message.text.replace('/pokeAll','')
-    print('update text: ',update);
+    print('update text: ',update)
     with ts3.query.TS3Connection(ts3adress) as ts3conn:
         ts3conn.login(
                 client_login_name=ts3username,
