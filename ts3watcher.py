@@ -41,11 +41,19 @@ def enterwatcherbot(ts3conn, msg=None):
         except ts3.query.TS3TimeoutError:
             pass
         else:
+            print(event.parsed[0])
             # Greet new clients.
             if (str(event.event) == "notifycliententerview") and '9' in event.parsed[0]['client_servergroups'].split(','):
                 # -32821639
                 lstTxt = '\n<b>' + event.parsed[0]['client_nickname'] + '</b> зашел на сервер ts'
                 mes = bot.sendMessage(chat_id=mainChatId, text=lstTxt, parse_mode=telegram.ParseMode.HTML)
+            else:
+                if (str(event.event) == "notifycliententerview") and '7' not in event.parsed[0]['client_servergroups'].split(','):
+                    lstTxt = 'На ts сервер зашел незнакомец!\
+                              \nNickname: <b>'+ event.parsed[0]['client_nickname'] +'</b> \
+                              \nСтрана: <b>'  + event.parsed[0]['client_country'] + '</b>'
+                    mes = bot.sendMessage(chat_id=mainChatId, text=lstTxt, parse_mode=telegram.ParseMode.HTML)
+
     return None
 
 with ts3.query.TS3Connection(ts3adress) as ts3conn:
